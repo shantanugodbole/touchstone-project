@@ -25,10 +25,15 @@ class ColorPicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      child: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: color,
-        child: icon,
+      child: Container(
+        width: 40,
+        height: 90,
+        child: MaterialButton(
+          shape: CircleBorder(side: BorderSide(color: color)),
+          onPressed: () {},
+          color: color,
+          child: icon,
+        ),
       ),
     );
   }
@@ -40,17 +45,15 @@ class ScenePicker extends StatelessWidget {
   ScenePicker(this.color, this.label);
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      child: ButtonTheme(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        height: 75,
-        child: RaisedButton.icon(
-          onPressed: null,
+    return ButtonTheme(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      height: 75,
+      minWidth: 175,
+      buttonColor: color,
+      child: RaisedButton.icon(
+          onPressed: () {},
           icon: ImageWidget('assets/solution2.png'),
-          label: label,
-          color: color,
-        ),
-      ),
+          label: label),
     );
   }
 }
@@ -187,7 +190,18 @@ class _DetailsState extends State<Details> {
                     kBottomNavigationBarHeight,
                 child: Column(
                   children: [
-                    Text('Intensity'),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: 50,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                          child: Text('Intensity'),
+                        ),
+                      ],
+                    ),
                     Column(
                       children: [
                         Row(
@@ -227,7 +241,15 @@ class _DetailsState extends State<Details> {
                         ),
                       ],
                     ),
-                    Text('Colors'),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                          child: Text('Colors'),
+                        ),
+                      ],
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -240,16 +262,31 @@ class _DetailsState extends State<Details> {
                         ColorPicker(Colors.white, Image.asset('assets/+.png'))
                       ],
                     ),
-                    Text('Scenes'),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                          child: Text('Scenes'),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
                     Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Row(
+                          // crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             ScenePicker(Colors.redAccent, Text('Birthday')),
                             ScenePicker(Colors.indigoAccent, Text('Party'))
                           ],
+                        ),
+                        SizedBox(
+                          height: 20,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
