@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/customcard.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -7,19 +8,26 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final assetimage = '../../assets/user.svg';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFeefbfb),
       resizeToAvoidBottomPadding: false,
-      backgroundColor: Colors.blue,
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              icon: Icon(Icons.home), title: Text('Title 1')),
+            icon: ImageIcon(AssetImage('assets/bulb.png')),
+            label: '',
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.business), title: Text('Title 1')),
+            icon: ImageIcon(AssetImage('assets/house.png')),
+            label: '',
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.school), title: Text('Title 1')),
+            icon: ImageIcon(AssetImage('assets/if-settings.png')),
+            label: '',
+          ),
         ],
         backgroundColor: Colors.white,
       ),
@@ -27,22 +35,28 @@ class _HomeState extends State<Home> {
         Column(
           children: [
             Container(
-              height: MediaQuery.of(context).size.height / 4,
-              color: Colors.blue,
-              child: Row(
-                children: [
-                  Padding(
-                      padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                      child: Text('Control Panel')),
-                  // Image.asset(name)
-                ],
-              ),
-            ), // Blue Part
-            // TODO : Give White container only top circular border
+                height: MediaQuery.of(context).size.height / 4,
+                color: Colors.blue,
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                          padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                          child: Text('Control Panel')),
+                      Image.asset(
+                        'assets/user.png',
+                        height: 100,
+                        width: 100,
+                      ),
+                    ],
+                  ),
+                )), // Blue Part
             Container(
                 decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(color: Colors.white),
+                    color: Color(0xFFeefbfb),
+                    border: Border.all(color: Color(0xFFeefbfb)),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(20),
                         topRight: Radius.circular(20))),
@@ -52,25 +66,28 @@ class _HomeState extends State<Home> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
+                    Text('All Rooms'),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        CustomCard("Hello", "World"),
-                        CustomCard("Hello", "World"),
+                        CustomCard("Bed Room", "4 lights", 'assets/bed.png'),
+                        CustomCard(
+                            "Living Room", "2 lights", 'assets/room.png'),
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        CustomCard("Hello", "World"),
-                        CustomCard("Hello", "World"),
+                        CustomCard("Kitchen", "5 lights", 'assets/kitchen.png'),
+                        CustomCard(
+                            "Bathroom", "1 light", 'assets/bathtube.png'),
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        CustomCard("Hello", "World"),
-                        CustomCard("Hello", "World"),
+                        CustomCard("Outdoor", "5 lights", 'assets/house.png'),
+                        CustomCard("Balcony", "2 lights", 'assets/balcony.png'),
                       ],
                     )
                   ],
