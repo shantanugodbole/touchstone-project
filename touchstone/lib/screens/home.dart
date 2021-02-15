@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../widgets/customcard.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 
@@ -12,7 +13,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFeefbfb),
+      backgroundColor: Colors.blue,
       resizeToAvoidBottomPadding: false,
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -21,7 +22,7 @@ class _HomeState extends State<Home> {
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: ImageIcon(AssetImage('assets/house.png')),
+            icon: ImageIcon(AssetImage('assets/Icon feather-home.png')),
             label: '',
           ),
           BottomNavigationBarItem(
@@ -44,7 +45,13 @@ class _HomeState extends State<Home> {
                     children: [
                       Padding(
                           padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                          child: Text('Control Panel')),
+                          child: Text(
+                            'Control \n Panel',
+                            style: GoogleFonts.roboto(
+                                color: Colors.white,
+                                fontSize: 32,
+                                fontWeight: FontWeight.bold),
+                          )),
                       Image.asset(
                         'assets/user.png',
                         height: 100,
@@ -66,7 +73,21 @@ class _HomeState extends State<Home> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text('All Rooms'),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 30),
+                          child: Text(
+                            'All Rooms',
+                            style: GoogleFonts.roboto(
+                                fontSize: 28,
+                                fontWeight: FontWeight.bold,
+                                color: Colors
+                                    .blue), // TODO: Make colour as dark blue
+                          ),
+                        ),
+                      ],
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:touchstone/screens/details.dart';
 
 class CustomCard extends StatelessWidget {
@@ -12,7 +13,7 @@ class CustomCard extends StatelessWidget {
     return GestureDetector(
       child: Container(
           height: MediaQuery.of(context).size.width / 3,
-          width: MediaQuery.of(context).size.width / 3,
+          width: MediaQuery.of(context).size.width / 2.75,
           decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(
@@ -28,11 +29,19 @@ class CustomCard extends StatelessWidget {
                   child: Image.asset(displayImage)),
               Padding(
                 padding: EdgeInsets.fromLTRB(12, 0, 0, 0),
-                child: Text(header),
+                child: Text(header,
+                    style: GoogleFonts.roboto(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black)),
               ),
               Padding(
                 padding: EdgeInsets.fromLTRB(12, 0, 0, 0),
-                child: Text(subtext),
+                child: Text(subtext,
+                    style: GoogleFonts.roboto(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.yellow)),
               )
             ],
           )),

@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Details extends StatefulWidget {
   @override
@@ -52,26 +53,28 @@ class ScenePicker extends StatelessWidget {
       buttonColor: color,
       child: RaisedButton.icon(
           onPressed: () {},
-          icon: ImageWidget('assets/solution2.png'),
+          icon: ImageWidget('assets/solution1.png'),
           label: label),
     );
   }
 }
 
 class _DetailsState extends State<Details> {
-  double _currentSliderValue = 20;
+  double _currentSliderValue = 100;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       bottomNavigationBar: BottomNavigationBar(
+        onTap: null,
+        // showUnselectedLabels: false,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: ImageIcon(AssetImage('assets/bulb.png')),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: ImageIcon(AssetImage('assets/house.png')),
+            icon: ImageIcon(AssetImage('assets/Icon feather-home.png')),
             label: '',
           ),
           BottomNavigationBarItem(
@@ -95,17 +98,42 @@ class _DetailsState extends State<Details> {
                     children: [
                       Column(
                         children: [
+                          SizedBox(
+                            height: 45,
+                          ),
                           Row(
+                            // mainAxisAlignment: MainAxisAlignment.start,
+                            // crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Image.asset(
-                                  'assets/Icon ionic-md-arrow-round-back.png'),
-                              Text('Bed \n Room'),
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
+                                child: Image.asset(
+                                    'assets/Icon ionic-md-arrow-round-back.png'),
+                              ),
+                              Text('Bed',
+                                  style: GoogleFonts.roboto(
+                                      fontSize: 34,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white)),
                             ],
                           ),
-                          Text('4 lights')
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                            child: Text('Room',
+                                style: GoogleFonts.roboto(
+                                    fontSize: 34,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white)),
+                          ),
+                          Text('4 lights',
+                              style: GoogleFonts.roboto(
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.yellow))
                         ],
                       ),
                       Column(
+                        // crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Image.asset('assets/Group 38.png'),
                           Container(
@@ -125,51 +153,66 @@ class _DetailsState extends State<Details> {
                     ],
                   ),
                   SizedBox(
-                    height: 80,
+                    height: 70,
                   ),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        ButtonTheme(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                          height: 50,
-                          buttonColor: Colors.white,
-                          child: RaisedButton.icon(
-                              onPressed: () {},
-                              icon: ImageWidget('assets/bulb.png'),
-                              label: Text('Main Light')),
-                        ),
-                        SizedBox(
-                          width: 15,
-                        ),
-                        ButtonTheme(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                          height: 50,
-                          buttonColor: Colors.blue,
-                          child: RaisedButton.icon(
-                              onPressed: () {},
-                              icon: ImageWidget(
-                                  'assets/furniture-and-household.png'),
-                              label: Text('Desk Lights')),
-                        ),
-                        SizedBox(
-                          width: 15,
-                        ),
-                        ButtonTheme(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                          height: 50,
-                          buttonColor: Colors.white,
-                          child: RaisedButton.icon(
-                              onPressed: () {},
-                              icon: ImageWidget('assets/bulb.png'),
-                              label: Text('Bedroom')),
-                        )
-                      ],
+                  Padding(
+                    padding: EdgeInsets.only(left: 20),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          ButtonTheme(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10)),
+                            height: 50,
+                            buttonColor: Colors.white,
+                            child: RaisedButton.icon(
+                                onPressed: () {},
+                                icon: ImageWidget('assets/surface1.png'),
+                                label: Text('Main Light',
+                                    style: GoogleFonts.roboto(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.blue))),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          ButtonTheme(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10)),
+                            height: 50,
+                            buttonColor: Colors.blue,
+                            child: RaisedButton.icon(
+                                onPressed: () {},
+                                icon: ImageWidget(
+                                    'assets/furniture-and-household.png'),
+                                label: Text('Desk Lights',
+                                    style: GoogleFonts.roboto(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white))),
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          ButtonTheme(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10)),
+                            height: 50,
+                            buttonColor: Colors.white,
+                            child: RaisedButton.icon(
+                                onPressed: () {},
+                                icon: ImageWidget('assets/surface1.png'),
+                                label: Text('Bedroom',
+                                    style: GoogleFonts.roboto(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.blue))),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -194,11 +237,15 @@ class _DetailsState extends State<Details> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         SizedBox(
-                          height: 50,
+                          height: 60,
                         ),
                         Padding(
                           padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                          child: Text('Intensity'),
+                          child: Text('Intensity',
+                              style: GoogleFonts.roboto(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.blue)),
                         ),
                       ],
                     ),
@@ -246,7 +293,11 @@ class _DetailsState extends State<Details> {
                       children: [
                         Padding(
                           padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                          child: Text('Colors'),
+                          child: Text('Colors',
+                              style: GoogleFonts.roboto(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.blue)),
                         ),
                       ],
                     ),
@@ -256,8 +307,8 @@ class _DetailsState extends State<Details> {
                         ColorPicker(Colors.redAccent, null),
                         ColorPicker(Colors.greenAccent, null),
                         ColorPicker(Colors.blueAccent, null),
-                        ColorPicker(Colors.purpleAccent, null),
                         ColorPicker(Colors.indigoAccent, null),
+                        ColorPicker(Colors.purpleAccent, null),
                         ColorPicker(Colors.brown, null),
                         ColorPicker(Colors.white, Image.asset('assets/+.png'))
                       ],
@@ -267,7 +318,11 @@ class _DetailsState extends State<Details> {
                       children: [
                         Padding(
                           padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                          child: Text('Scenes'),
+                          child: Text('Scenes',
+                              style: GoogleFonts.roboto(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.blue)),
                         ),
                       ],
                     ),
@@ -281,8 +336,20 @@ class _DetailsState extends State<Details> {
                           // crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            ScenePicker(Colors.redAccent, Text('Birthday')),
-                            ScenePicker(Colors.indigoAccent, Text('Party'))
+                            ScenePicker(
+                                Colors.redAccent,
+                                Text('Birthday',
+                                    style: GoogleFonts.roboto(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white))),
+                            ScenePicker(
+                                Colors.indigoAccent,
+                                Text('Party',
+                                    style: GoogleFonts.roboto(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white)))
                           ],
                         ),
                         SizedBox(
@@ -291,8 +358,20 @@ class _DetailsState extends State<Details> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            ScenePicker(Colors.blueAccent, Text('Relax')),
-                            ScenePicker(Colors.greenAccent, Text('Fun'))
+                            ScenePicker(
+                                Colors.blueAccent,
+                                Text('Relax',
+                                    style: GoogleFonts.roboto(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white))),
+                            ScenePicker(
+                                Colors.greenAccent,
+                                Text('Fun',
+                                    style: GoogleFonts.roboto(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white)))
                           ],
                         ),
                       ],
