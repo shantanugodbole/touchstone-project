@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../widgets/customcard.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
+import '../constants.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -9,6 +9,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  int i = 0;
+  var data = informationList;
   final assetimage = '../../assets/user.svg';
   @override
   Widget build(BuildContext context) {
@@ -63,8 +65,8 @@ class _HomeState extends State<Home> {
                 )), // Blue Part
             Container(
                 decoration: BoxDecoration(
-                    color: Color(0xFFeefbfb),
-                    border: Border.all(color: Color(0xFFeefbfb)),
+                    color: Color(0xFFfafafa),
+                    border: Border.all(color: Color(0xFFfafafa)),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(20),
                         topRight: Radius.circular(20))),
@@ -91,24 +93,30 @@ class _HomeState extends State<Home> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        CustomCard("Bed Room", "4 lights", 'assets/bed.png'),
-                        CustomCard(
-                            "Living Room", "2 lights", 'assets/room.png'),
+                        // CustomCard(data[0][0], "4 lights", 'assets/bed.png'),
+                        // CustomCard(
+                        //     "Living Room", "2 lights", 'assets/room.png'),
+                        for (i; i < 2; i++)
+                          CustomCard(data[i][0], data[i][1], data[i][2]),
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        CustomCard("Kitchen", "5 lights", 'assets/kitchen.png'),
-                        CustomCard(
-                            "Bathroom", "1 light", 'assets/bathtube.png'),
+                        // CustomCard("Kitchen", "5 lights", 'assets/kitchen.png'),
+                        // CustomCard(
+                        //     "Bathroom", "1 light", 'assets/bathtube.png'),
+                        for (i; i < 4; i++)
+                          CustomCard(data[i][0], data[i][1], data[i][2]),
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        CustomCard("Outdoor", "5 lights", 'assets/house.png'),
-                        CustomCard("Balcony", "2 lights", 'assets/balcony.png'),
+                        // CustomCard("Outdoor", "5 lights", 'assets/house.png'),
+                        // CustomCard("Balcony", "2 lights", 'assets/balcony.png'),
+                        for (i; i < 6; i++)
+                          CustomCard(data[i][0], data[i][1], data[i][2]),
                       ],
                     )
                   ],
