@@ -178,7 +178,7 @@ class _DetailsState extends State<Details> {
                               child: RaisedButton.icon(
                                   onPressed: () {},
                                   icon: ImageWidget('assets/surface1.png'),
-                                  label: Text('Bedroom',
+                                  label: Text('Bed',
                                       style: GoogleFonts.roboto(
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold,
