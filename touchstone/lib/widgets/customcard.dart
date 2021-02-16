@@ -8,6 +8,7 @@ class CustomCard extends StatelessWidget {
   final String displayImage;
   // final Image image;
   CustomCard(this.header, this.subtext, this.displayImage);
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -46,12 +47,18 @@ class CustomCard extends StatelessWidget {
             ],
           )),
       onTap: () {
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(builder: (context) => Details()),
-        // );
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Details()));
+        var strings = header.split(" ");
+        strings.length == 1
+            ? Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        Details(strings[0], subtext, '')))
+            : Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        Details(strings[0], subtext, strings[1])));
       },
     );
   }

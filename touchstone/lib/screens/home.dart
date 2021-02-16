@@ -18,7 +18,7 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: BottomNavigationBar(
         unselectedItemColor: Colors.blue,
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
+          BottomNavigationBarItem(  
             icon: ImageIcon(AssetImage('assets/bulb.png')),
             label: '',
           ),
@@ -84,7 +84,7 @@ class _HomeState extends State<Home> {
                                 fontSize: 28,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.blue[
-                                    800]), // TODO: Make colour as dark blue
+                                    800]),
                           ),
                         ),
                       ],

@@ -6,6 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Details extends StatefulWidget {
+  final String header1;
+  final String header2;
+  final String subtext;
+  Details(this.header1, this.subtext, this.header2);
   @override
   _DetailsState createState() => _DetailsState();
 }
@@ -68,22 +72,24 @@ class _DetailsState extends State<Details> {
                                       'assets/Icon ionic-md-arrow-round-back.png'),
                                 ),
                               ),
-                              Text('Bed',
+                              Text(widget.header1,
                                   style: GoogleFonts.roboto(
                                       fontSize: 34,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.white)),
                             ],
                           ),
-                          Padding(
-                            padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                            child: Text('Room',
-                                style: GoogleFonts.roboto(
-                                    fontSize: 34,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white)),
-                          ),
-                          Text('4 lights',
+                          widget.header2 == ''
+                              ? SizedBox(height: 0)
+                              : Padding(
+                                  padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                  child: Text('Room',
+                                      style: GoogleFonts.roboto(
+                                          fontSize: 34,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white)),
+                                ),
+                          Text(widget.subtext,
                               style: GoogleFonts.roboto(
                                   fontSize: 28,
                                   fontWeight: FontWeight.bold,
