@@ -1,5 +1,7 @@
 import 'dart:ui';
-
+import '../widgets/colorpicker.dart';
+import '../widgets/imagewidget.dart';
+import '../widgets/scenepicker.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -8,59 +10,8 @@ class Details extends StatefulWidget {
   _DetailsState createState() => _DetailsState();
 }
 
-class ImageWidget extends StatelessWidget {
-  final String imagePath;
-  ImageWidget(this.imagePath);
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Image.asset(imagePath),
-    );
-  }
-}
-
-class ColorPicker extends StatelessWidget {
-  final Color color;
-  final Widget icon;
-  ColorPicker(this.color, this.icon);
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      child: Container(
-        width: 40,
-        height: 90,
-        child: MaterialButton(
-          elevation: 0,
-          shape: CircleBorder(side: BorderSide(color: color)),
-          onPressed: () {},
-          color: color,
-          child: icon,
-        ),
-      ),
-    );
-  }
-}
-
-class ScenePicker extends StatelessWidget {
-  final Widget label;
-  final Color color;
-  ScenePicker(this.color, this.label);
-  @override
-  Widget build(BuildContext context) {
-    return ButtonTheme(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      height: 75,
-      minWidth: 175,
-      buttonColor: color,
-      child: RaisedButton.icon(
-          onPressed: () {},
-          icon: ImageWidget('assets/solution1.png'),
-          label: label),
-    );
-  }
-}
-
 class _DetailsState extends State<Details> {
+  Color bulbColor = Colors.yellow;
   double _currentSliderValue = 100;
   @override
   Widget build(BuildContext context) {
@@ -149,7 +100,7 @@ class _DetailsState extends State<Details> {
                               color: Colors.transparent,
                               child: new Container(
                                 decoration: new BoxDecoration(
-                                  color: Colors.yellow,
+                                  color: bulbColor,
                                   borderRadius: new BorderRadius.only(
                                       bottomLeft: Radius.circular(40.0),
                                       bottomRight: Radius.circular(40.0)),
@@ -195,7 +146,7 @@ class _DetailsState extends State<Details> {
                                 onPressed: () {},
                                 icon: ImageWidget(
                                     'assets/furniture-and-household.png'),
-                                label: Text('Desk Lights',
+                                label: Text('Desk lights',
                                     style: GoogleFonts.roboto(
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold,
@@ -311,13 +262,38 @@ class _DetailsState extends State<Details> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        ColorPicker(Colors.redAccent, null),
-                        ColorPicker(Colors.greenAccent, null),
-                        ColorPicker(Colors.blueAccent, null),
-                        ColorPicker(Colors.indigoAccent, null),
-                        ColorPicker(Colors.purpleAccent, null),
-                        ColorPicker(Colors.brown, null),
-                        ColorPicker(Colors.white, Image.asset('assets/+.png'))
+                        ColorPicker(Colors.redAccent, null, () {
+                          setState(() {
+                            bulbColor = Colors.redAccent;
+                          });
+                        }),
+                        ColorPicker(Colors.greenAccent, null, () {
+                          setState(() {
+                            bulbColor = Colors.greenAccent;
+                          });
+                        }),
+                        ColorPicker(Colors.blueAccent, null, () {
+                          setState(() {
+                            bulbColor = Colors.blueAccent;
+                          });
+                        }),
+                        ColorPicker(Colors.indigoAccent, null, () {
+                          setState(() {
+                            bulbColor = Colors.indigoAccent;
+                          });
+                        }),
+                        ColorPicker(Colors.purpleAccent, null, () {
+                          setState(() {
+                            bulbColor = Colors.purpleAccent;
+                          });
+                        }),
+                        ColorPicker(Colors.brown, null, () {
+                          setState(() {
+                            bulbColor = Colors.brown;
+                          });
+                        }),
+                        ColorPicker(
+                            Colors.white, Image.asset('assets/+.png'), () {})
                       ],
                     ),
                     Row(
