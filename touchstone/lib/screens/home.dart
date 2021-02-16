@@ -13,9 +13,10 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.blue[700],
       resizeToAvoidBottomPadding: false,
       bottomNavigationBar: BottomNavigationBar(
+        unselectedItemColor: Colors.blue,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: ImageIcon(AssetImage('assets/bulb.png')),
@@ -37,7 +38,7 @@ class _HomeState extends State<Home> {
           children: [
             Container(
                 height: MediaQuery.of(context).size.height / 4,
-                color: Colors.blue,
+                color: Colors.blue[700],
                 child: Padding(
                   padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
                   child: Row(
@@ -46,7 +47,7 @@ class _HomeState extends State<Home> {
                       Padding(
                           padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                           child: Text(
-                            'Control \n Panel',
+                            'Control\nPanel',
                             style: GoogleFonts.roboto(
                                 color: Colors.white,
                                 fontSize: 32,
@@ -82,8 +83,8 @@ class _HomeState extends State<Home> {
                             style: GoogleFonts.roboto(
                                 fontSize: 28,
                                 fontWeight: FontWeight.bold,
-                                color: Colors
-                                    .blue), // TODO: Make colour as dark blue
+                                color: Colors.blue[
+                                    800]), // TODO: Make colour as dark blue
                           ),
                         ),
                       ],

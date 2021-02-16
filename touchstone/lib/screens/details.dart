@@ -30,6 +30,7 @@ class ColorPicker extends StatelessWidget {
         width: 40,
         height: 90,
         child: MaterialButton(
+          elevation: 0,
           shape: CircleBorder(side: BorderSide(color: color)),
           onPressed: () {},
           color: color,
@@ -68,6 +69,7 @@ class _DetailsState extends State<Details> {
       bottomNavigationBar: BottomNavigationBar(
         onTap: null,
         // showUnselectedLabels: false,
+        unselectedItemColor: Colors.blue,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: ImageIcon(AssetImage('assets/bulb.png')),
@@ -84,12 +86,12 @@ class _DetailsState extends State<Details> {
         ],
         backgroundColor: Colors.white,
       ),
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.blue[700],
       body: Stack(overflow: Overflow.visible, children: [
         Column(
           children: [
             Container(
-              color: Colors.blue,
+              color: Colors.blue[700],
               height: MediaQuery.of(context).size.height / 2.75,
               child: Column(
                 children: [
@@ -105,10 +107,15 @@ class _DetailsState extends State<Details> {
                             // mainAxisAlignment: MainAxisAlignment.start,
                             // crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Padding(
-                                padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
-                                child: Image.asset(
-                                    'assets/Icon ionic-md-arrow-round-back.png'),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Padding(
+                                  padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
+                                  child: Image.asset(
+                                      'assets/Icon ionic-md-arrow-round-back.png'),
+                                ),
                               ),
                               Text('Bed',
                                   style: GoogleFonts.roboto(
@@ -183,7 +190,7 @@ class _DetailsState extends State<Details> {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)),
                             height: 50,
-                            buttonColor: Colors.blue,
+                            buttonColor: Colors.blue[800],
                             child: RaisedButton.icon(
                                 onPressed: () {},
                                 icon: ImageWidget(
@@ -245,7 +252,7 @@ class _DetailsState extends State<Details> {
                               style: GoogleFonts.roboto(
                                   fontSize: 22,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.blue)),
+                                  color: Colors.blue[800])),
                         ),
                       ],
                     ),
@@ -297,7 +304,7 @@ class _DetailsState extends State<Details> {
                               style: GoogleFonts.roboto(
                                   fontSize: 22,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.blue)),
+                                  color: Colors.blue[800])),
                         ),
                       ],
                     ),
@@ -322,7 +329,7 @@ class _DetailsState extends State<Details> {
                               style: GoogleFonts.roboto(
                                   fontSize: 22,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.blue)),
+                                  color: Colors.blue[800])),
                         ),
                       ],
                     ),

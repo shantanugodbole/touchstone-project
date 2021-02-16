@@ -28,7 +28,7 @@ class CustomCard extends StatelessWidget {
                   padding: EdgeInsets.fromLTRB(12, 0, 0, 0),
                   child: Image.asset(displayImage)),
               Padding(
-                padding: EdgeInsets.fromLTRB(12, 0, 0, 0),
+                padding: EdgeInsets.fromLTRB(12, 10, 0, 0),
                 child: Text(header,
                     style: GoogleFonts.roboto(
                         fontSize: 22,
@@ -41,7 +41,7 @@ class CustomCard extends StatelessWidget {
                     style: GoogleFonts.roboto(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
-                        color: Colors.yellow)),
+                        color: Colors.yellow[700])),
               )
             ],
           )),
@@ -50,7 +50,7 @@ class CustomCard extends StatelessWidget {
         //   context,
         //   MaterialPageRoute(builder: (context) => Details()),
         // );
-        Navigator.pushReplacement(
+        Navigator.push(
             context, MaterialPageRoute(builder: (context) => Details()));
       },
     );
