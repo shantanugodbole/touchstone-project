@@ -52,8 +52,7 @@ class CustomCard extends StatelessWidget {
             ? Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) =>
-                        Details(strings[0], subtext, '')))
+                    builder: (context) => Details(strings[0], subtext, '')))
             : Navigator.push(
                 context,
                 MaterialPageRoute(

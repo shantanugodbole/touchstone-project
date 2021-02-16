@@ -46,6 +46,7 @@ class _DetailsState extends State<Details> {
         Column(
           children: [
             Container(
+              // TODO: Add animation
               color: Colors.blue[700],
               height: MediaQuery.of(context).size.height / 2.75,
               child: Column(
@@ -120,6 +121,7 @@ class _DetailsState extends State<Details> {
                     height: 70,
                   ),
                   Padding(
+                    // TODO: Animate -- This is the scroll view
                     padding: EdgeInsets.only(left: 20),
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
@@ -260,34 +262,34 @@ class _DetailsState extends State<Details> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        ColorPicker(Colors.redAccent, null, () {
+                        ColorPicker(Colors.redAccent[100], null, () {
                           setState(() {
-                            bulbColor = Colors.redAccent;
+                            bulbColor = Colors.redAccent[100];
                           });
                         }),
-                        ColorPicker(Colors.greenAccent, null, () {
+                        ColorPicker(Colors.greenAccent[100], null, () {
                           setState(() {
-                            bulbColor = Colors.greenAccent;
+                            bulbColor = Colors.greenAccent[100];
                           });
                         }),
-                        ColorPicker(Colors.blueAccent, null, () {
+                        ColorPicker(Colors.blueAccent[100], null, () {
                           setState(() {
-                            bulbColor = Colors.blueAccent;
+                            bulbColor = Colors.blueAccent[100];
                           });
                         }),
-                        ColorPicker(Colors.indigoAccent, null, () {
+                        ColorPicker(Colors.indigoAccent[100], null, () {
                           setState(() {
-                            bulbColor = Colors.indigoAccent;
+                            bulbColor = Colors.indigoAccent[100];
                           });
                         }),
-                        ColorPicker(Colors.purpleAccent, null, () {
+                        ColorPicker(Colors.purpleAccent[100], null, () {
                           setState(() {
-                            bulbColor = Colors.purpleAccent;
+                            bulbColor = Colors.purpleAccent[100];
                           });
                         }),
-                        ColorPicker(Colors.brown, null, () {
+                        ColorPicker(Colors.yellowAccent[100], null, () {
                           setState(() {
-                            bulbColor = Colors.brown;
+                            bulbColor = Colors.yellow[100];
                           });
                         }),
                         ColorPicker(
@@ -318,14 +320,14 @@ class _DetailsState extends State<Details> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             ScenePicker(
-                                Colors.redAccent,
+                                Colors.redAccent[100],
                                 Text('Birthday',
                                     style: GoogleFonts.roboto(
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.white))),
                             ScenePicker(
-                                Colors.indigoAccent,
+                                Colors.indigoAccent[100],
                                 Text('Party',
                                     style: GoogleFonts.roboto(
                                         fontSize: 16,
@@ -340,14 +342,14 @@ class _DetailsState extends State<Details> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             ScenePicker(
-                                Colors.blueAccent,
+                                Colors.blueAccent[100],
                                 Text('Relax',
                                     style: GoogleFonts.roboto(
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.white))),
                             ScenePicker(
-                                Colors.greenAccent,
+                                Colors.greenAccent[100],
                                 Text('Fun',
                                     style: GoogleFonts.roboto(
                                         fontSize: 16,

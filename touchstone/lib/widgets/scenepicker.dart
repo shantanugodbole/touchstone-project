@@ -8,7 +8,7 @@ class ScenePicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ButtonTheme(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       height: 75,
       minWidth: 175,
       buttonColor: color,
