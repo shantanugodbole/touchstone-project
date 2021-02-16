@@ -182,13 +182,6 @@ class _DetailsState extends State<Details> {
                 ],
               ),
             ),
-            // Positioned(
-            //   child: FloatingActionButton(
-            //     backgroundColor: Colors.white,
-            //     onPressed: null,
-            //     child: Image.asset('assets/Icon awesome-power-off.png'),
-            //   ),
-            // ),
             // FloatingActionButton(onPressed: null),
             Container(
                 width: MediaQuery.of(context).size.width,
@@ -228,7 +221,6 @@ class _DetailsState extends State<Details> {
                                 thumbColor: Colors.white,
                                 thumbShape: RoundSliderThumbShape(
                                     enabledThumbRadius: 10.0),
-                                overlayColor: Colors.red.withAlpha(32),
                                 overlayShape: RoundSliderOverlayShape(
                                     overlayRadius: 28.0),
                               ),
@@ -385,6 +377,18 @@ class _DetailsState extends State<Details> {
             //             topLeft: Radius.circular(20),
             //             topRight: Radius.circular(20)))),
           ],
+        ),
+        Positioned(
+          // right: 40,
+          right: 20,
+          top: MediaQuery.of(context).size.height / 4 +
+              kFloatingActionButtonMargin * 5,
+          child: FloatingActionButton(
+            mini: true,
+            backgroundColor: Colors.white,
+            onPressed: null,
+            child: Image.asset('assets/Icon awesome-power-off.png'),
+          ),
         ),
       ]),
     );

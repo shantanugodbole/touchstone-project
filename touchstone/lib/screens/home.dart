@@ -18,7 +18,7 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: BottomNavigationBar(
         unselectedItemColor: Colors.blue,
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(  
+          BottomNavigationBarItem(
             icon: ImageIcon(AssetImage('assets/bulb.png')),
             label: '',
           ),
@@ -56,7 +56,7 @@ class _HomeState extends State<Home> {
                       Image.asset(
                         'assets/user.png',
                         height: 100,
-                        width: 100,
+                        width: 125,
                       ),
                     ],
                   ),
@@ -83,8 +83,7 @@ class _HomeState extends State<Home> {
                             style: GoogleFonts.roboto(
                                 fontSize: 28,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.blue[
-                                    800]),
+                                color: Colors.blue[800]),
                           ),
                         ),
                       ],
